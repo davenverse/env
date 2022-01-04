@@ -30,7 +30,7 @@ object Env extends EnvCompanionPlatform {
   def apply[F[_]](implicit E: Env[F]): E.type = E
 
   /**
-   * Constructs a `Env` instance for `F` data types that are [[cats.effect.kernel.Sync]].
+   * Constructs a `Env` instance for `F` data types that are cats.effect.kernel.Sync.
    */
   def make[F[_]](implicit F: Sync[F]): Env[F] = new SyncEnv[F]
 
